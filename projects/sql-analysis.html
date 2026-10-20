@@ -2,7 +2,52 @@
 <section class="ss-photo-block container"><img src="../assets/sweet-spot-dashboard.jpg" alt="Original Sweet Spot Tableau dashboard with four charts comparing candy product revenue, profit margin, customer spending and U.S. sales." loading="eager"><div class="ss-photo-bottom"><span>FINAL DASHBOARD</span><a href="#dashboard">EXPLORE INTERACTIVE VERSION ↗</a></div></section>
 <section class="container ss-section ss-two"><div><span class="eyebrow">01 / THE QUESTION</span><h2>What makes a product <em>worth selling?</em></h2></div><div class="ss-prose"><p>Just because a product sells well doesn't necessarily mean it's the most profitable. I wanted to understand which products actually bring in the most profit, how customers' purchasing habits differ, and which states generate the most revenue.</p><p>For this project, I used SQL to analyze a candy distributor's sales data and answer questions that could help a business make decisions about its products/customers. I then used Tableau to make visualizations of my findings.</p></div></section>
 <section class="ss-tint"><div class="container ss-section"><span class="eyebrow">02 / DATA & METHOD</span><h2 class="ss-section-title">What the<br>Data <em>Tells Us.</em></h2><div class="ss-method"><div><span class="ss-method-no">01</span><h3>Understand the dataset</h3><p>Used 1,298 records from a sampled fictional candy distributor dataset. It included sales, orders, customer IDs, product IDs and geography.</p></div><div><span class="ss-method-no">02</span><h3>Write SQL questions</h3><p>I used GROUP BY, a product table INNER JOIN, order counts with DISTINCT, a subquery, and calculated gross profit margins.</p></div><div><span class="ss-method-no">03</span><h3>Visualize</h3><p>Exported query results and created Tableau visualizations.</p></div></div><p class="ss-note">Source: Maven Analytics Candy Distributor dataset that I adapted to a 1,298 record sample in order to upload it to SQL Sandbox. This is fictional and sampled data set, so it is not a complete sales history or a real company's results.</p></div></section>
-<section class="container ss-section" id="sql"><div class="ss-section-heading"><div><span class="eyebrow">03 / UNDER THE HOOD</span><h2 class="ss-section-title">The SQL<br><em>behind it.</em></h2></div><a class="ss-action" href="../assets/sweet-spot-queries.sql" download>Download all five queries ↗</a></div><p class="ss-prose ss-short">I used SQL to answer five questions about the company's sales, products, and customers. Open any query to inspect the logic.</p><div class="ss-questions"><article class="ss-question"><div class="ss-question-head"><span class="eyebrow">QUESTION 01 / SUM, GROUP BY, ORDER BY</span><h3>Division performance</h3><p>Which candy divisions generate the most revenue, and are they also the most profitable?</p></div><p class="ss-finding"><strong>Finding.</strong> In the sample Chocolate generated about 92% of revenue and Sugar had the highest division gross profit margin at 70.90%.</p><details class="ss-code"><summary>Explore the SQL query <span aria-hidden="true">↗</span></summary><pre><code>SELECT
+
+<!-- SWEET SPOT VIDEO WALKTHROUGH -->
+<section style="padding: 65px 0;">
+  <div style="max-width: 950px; margin: 0 auto;">
+
+    <p style="font-size: 13px; letter-spacing: 2px;">
+      PROJECT WALKTHROUGH
+    </p>
+
+    <h2 style="font-size: clamp(28px, 4vw, 46px); margin: 15px 0;">
+      A closer look at my project.
+    </h2>
+
+    <p style="max-width: 650px; margin-bottom: 30px;">
+      In this video, I walk through the SQL queries I wrote,
+      my Tableau dashboard, and what I learned from the analysis.
+    </p>
+
+    <div style="
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+    ">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/PYnZ1lNoPUc"
+        title="Sweet Spot SQL and Tableau Project Walkthrough"
+        style="
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        "
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+    <section class="container ss-section" id="sql"><div class="ss-section-heading"><div><span class="eyebrow">03 / UNDER THE HOOD</span><h2 class="ss-section-title">The SQL<br><em>behind it.</em></h2></div><a class="ss-action" href="../assets/sweet-spot-queries.sql" download>Download all five queries ↗</a></div><p class="ss-prose ss-short">I used SQL to answer five questions about the company's sales, products, and customers. Open any query to inspect the logic.</p><div class="ss-questions"><article class="ss-question"><div class="ss-question-head"><span class="eyebrow">QUESTION 01 / SUM, GROUP BY, ORDER BY</span><h3>Division performance</h3><p>Which candy divisions generate the most revenue, and are they also the most profitable?</p></div><p class="ss-finding"><strong>Finding.</strong> In the sample Chocolate generated about 92% of revenue and Sugar had the highest division gross profit margin at 70.90%.</p><details class="ss-code"><summary>Explore the SQL query <span aria-hidden="true">↗</span></summary><pre><code>SELECT
     Division,
     SUM(Sales) AS &quot;Total Revenue&quot;,
     SUM(Gross_Profit) AS &quot;Total Gross Profit&quot;,
