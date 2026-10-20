@@ -1,0 +1,16 @@
+SWEET SPOT PORTFOLIO UPDATE
+
+This folder is a copy of the original portfolio plus the Sweet Spot case study.
+
+CHANGED: index.html, projects/sql-analysis.html, style.css
+ADDED: assets/sweet-spot-dashboard.jpg, assets/sweet-spot-queries.sql
+
+TO PUBLISH ON GITHUB PAGES:
+1. Open your existing Sophia-Jensen.github.io repository.
+2. Upload the three changed files to their matching locations (keep the same folder paths).
+3. Upload both added assets into assets/.
+4. Commit changes and wait for GitHub Pages to deploy.
+5. Verify homepage project card, full SQL page, Tableau embed and links.
+
+Do not upload the ZIP as a single file; extract it and preserve paths. Existing projects and assets are unchanged.
+Public dashboard: https://public.tableau.com/views/SweetSpotCandySalesCustomerAnalytics/Dashboard1
